@@ -1,12 +1,15 @@
 package:
   format-version: "1.0.0"
-  name: "replaceme"
+  name: "touch_host_driver_apps"
   type: "application"
   status: "beta"
   required: false
-  version: "1.0.0"
+  version: "1.0.0-rc.1"
 
   dependencies:
     - name: "csp"
       type: "package"
-      version: "3.14.0"
+      version: "3.19.6"
+    - name: "touch_host_driver"
+      type: "package"
+      version: "1.1.0-rc.1"
