@@ -1,5 +1,5 @@
 /*******************************************************************************
-  MPLAB Harmony Touch Host Interface v1.0.0 Release
+  MPLAB Harmony Touch Host Interface v1.1.0 Release
 
   Company:
 	Microchip Technology Inc.
@@ -20,7 +20,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
- * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (C) 2024 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software
  * and any derivatives exclusively with Microchip products. It is your
@@ -43,8 +43,8 @@
  *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _TOUCH_HOST_DRIVER_H    /* Guard against multiple inclusion */
-#define _TOUCH_HOST_DRIVER_H
+#ifndef TOUCH_HOST_DRIVER_H    /* Guard against multiple inclusion */
+#define TOUCH_HOST_DRIVER_H
 
 
 /* ************************************************************************** */
@@ -79,7 +79,7 @@ typedef uint16_t transferSize_t;
 #endif
 
 typedef  void(*callbackTx_T)(void);
-typedef  void(*callbackRx_T)(uint8_t);
+typedef  void(*callbackRx_T)(uint8_t callback);
 
 #define SYS_TIME_RESOLUTION_MSEC 10u
 
@@ -88,7 +88,7 @@ typedef  void(*callbackRx_T)(uint8_t);
 }
 #endif
 
-#endif /* _TOUCH_HOST_DRIVER_H */
+#endif /* TOUCH_HOST_DRIVER_H */
 
 /* *****************************************************************************
  End of File

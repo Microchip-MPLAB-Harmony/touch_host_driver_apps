@@ -1,5 +1,5 @@
 /*******************************************************************************
-  MPLAB Harmony Touch Host Interface v1.0.0 Release
+  MPLAB Harmony Touch Host Interface v1.1.0 Release
 
   Company:
     Microchip Technology Inc.
@@ -39,7 +39,7 @@ int touch_mainloop_example(void)
   SYS_Initialize(NULL);
     touchDeviceInit();
   touchTuneInit();
-  while (1)
+  while (true)
   {
 
     touchDeviceProcess();

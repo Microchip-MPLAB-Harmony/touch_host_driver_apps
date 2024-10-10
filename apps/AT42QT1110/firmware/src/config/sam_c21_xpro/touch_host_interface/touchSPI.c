@@ -1,5 +1,5 @@
 /*******************************************************************************
-  MPLAB Harmony Touch Host Interface v1.0.0 Release
+  MPLAB Harmony Touch Host Interface v1.1.0 Release
   
   Company:
     Microchip Technology Inc.
@@ -23,7 +23,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2024 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -60,24 +60,27 @@
 // *****************************************************************************
 // *****************************************************************************
 
-uintptr_t touchSPI;
+static uintptr_t touchSPI;
 
-callbackTx_T txCompleteCallback;
-callbackRx_T rxCompleteCallback;
+static callbackTx_T txCompleteCallback;
+static callbackRx_T rxCompleteCallback;
 
 static volatile uint8_t rxData;
 
-void touchSPITransferComplete(uintptr_t touchSPI){
+void touchSPITransferComplete(uintptr_t touchSPI_parm);
+void touchSPIRxComplete(uintptr_t touchSPI_parm);
+
+void touchSPITransferComplete(uintptr_t touchSPI_parm){
     if(txCompleteCallback != NULL){
         txCompleteCallback();
     }
 }
 
-void touchSPIRxComplete(uintptr_t touchSPI){
+void touchSPIRxComplete(uintptr_t touchSPI_parm){
     if(rxCompleteCallback != NULL){
         rxCompleteCallback(rxData);
     }
-    SERCOM5_SPI_Read((void *) &rxData,1);
+   (void) SERCOM5_SPI_Read((void *) &rxData,1);
 }
 
 void touchSPIInit(callbackTx_T txCallback, callbackRx_T rxCallback) {
@@ -89,11 +92,11 @@ void touchSPIInit(callbackTx_T txCallback, callbackRx_T rxCallback) {
 }
 
 void touchSPISendData(uint8_t *buffer, transferSize_t len){
-    SERCOM5_SPI_Write((void *) buffer, len);
+   (void) SERCOM5_SPI_Write((void *) buffer, len);
 }
 
 void touchSPIReadWrite(uint8_t *txBuffer, transferSize_t txSize, uint8_t* rxBuffer, transferSize_t rxSize){
-    SERCOM5_SPI_WriteRead(txBuffer, txSize, rxBuffer, rxSize);
+   (void) SERCOM5_SPI_WriteRead(txBuffer, txSize, rxBuffer, rxSize);
 }
 
 void touchSPIActivateSS(void) {
@@ -107,9 +110,15 @@ void touchSPIDeactivateSS(void) {
 }
 
 uint8_t touchSPIExchangeData(uint8_t txdata) {
-    uint8_t rxdata;
-    SERCOM5_SPI_WriteRead(&txdata, 1, &rxdata, 1);
-    while(SERCOM5_SPI_IsBusy());
+        static uint8_t rxdata = 0u;
+    
+    static uint8_t l_txdata = 0u;
+    l_txdata = txdata;
+    (void)SERCOM5_SPI_WriteRead(&l_txdata, 1, &rxdata, 1);
+     do
+    {
+        ; // do nothing...
+    }while(SERCOM5_SPI_IsBusy());
     return rxdata;
 }
 

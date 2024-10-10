@@ -45,9 +45,9 @@
                          displayName="touch_host_interface"
                          projectFiles="true">
             <itemPath>../src/config/sam_e54_xpro/touch_host_interface/touchTune.h</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/touch_host_interface/touchSPI.h</itemPath>
             <itemPath>../src/config/sam_e54_xpro/touch_host_interface/touch_host_driver.h</itemPath>
             <itemPath>../src/config/sam_e54_xpro/touch_host_interface/at42qt1110.h</itemPath>
+            <itemPath>../src/config/sam_e54_xpro/touch_host_interface/touchSPI.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/sam_e54_xpro/device_vectors.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/interrupts.h</itemPath>
@@ -190,6 +190,12 @@
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <itemPath>Makefile</itemPath>
+      <itemPath>sam_e54_xpro.mc3</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -246,9 +252,9 @@
                          displayName="touch_host_interface"
                          projectFiles="true">
             <itemPath>../src/config/sam_e54_xpro/touch_host_interface/touchTune.c</itemPath>
-            <itemPath>../src/config/sam_e54_xpro/touch_host_interface/touchSPI.c</itemPath>
             <itemPath>../src/config/sam_e54_xpro/touch_host_interface/at42qt1110_host_example.c</itemPath>
             <itemPath>../src/config/sam_e54_xpro/touch_host_interface/at42qt1110.c</itemPath>
+            <itemPath>../src/config/sam_e54_xpro/touch_host_interface/touchSPI.c</itemPath>
           </logicalFolder>
           <itemPath>../src/config/sam_e54_xpro/libc_syscalls.c</itemPath>
           <itemPath>../src/config/sam_e54_xpro/interrupts.c</itemPath>
@@ -258,12 +264,7 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <itemPath>Makefile</itemPath>
-      <itemPath>sam_e54_xpro.mc3</itemPath>
+      <itemPath>../src/config/sam_e54_xpro/pin_configurations.csv</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -279,7 +280,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.00</languageToolchainVersion>
+        <languageToolchainVersion>4.40</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -322,7 +323,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e54_xpro;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
+                  value="../src;../src/config/sam_e54_xpro;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -370,7 +371,7 @@
         <property key="no-startup-files" value="false"/>
         <property key="oXC32ld-extra-opts" value=""/>
         <property key="optimization-level" value=""/>
-        <property key="preprocessor-macros" value=";;"/>
+        <property key="preprocessor-macros" value=""/>
         <property key="remove-unused-sections" value="true"/>
         <property key="report-memory-usage" value="false"/>
         <property key="stack-size" value=""/>
@@ -390,7 +391,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/sam_e54_xpro;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/;"/>
+                  value="../src;../src/config/sam_e54_xpro;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

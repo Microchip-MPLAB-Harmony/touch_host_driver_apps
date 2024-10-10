@@ -60,6 +60,11 @@
 void Reset_Handler (void);
 void NonMaskableInt_Handler (void);
 void HardFault_Handler (void);
+void MemoryManagement_Handler (void);
+void BusFault_Handler (void);
+void UsageFault_Handler (void);
+void DebugMonitor_Handler (void);
+void SysTick_Handler (void);
 void SERCOM2_USART_InterruptHandler (void);
 void SERCOM7_I2C_InterruptHandler (void);
 

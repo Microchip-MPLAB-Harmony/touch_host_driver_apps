@@ -1,4 +1,4 @@
-<config configName="default" projectName="test_touch_host_interface_same54" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.0">
+<config configName="default" projectName="test_touch_host_interface_same54" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -4192,7 +4192,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>d527c5a0edef053470694bd2d7ea0c2551721dfc2980755a5bfa33cb940a055a</hash>
+         <hash>ec316c23479ba6d12d0b59f0dddddb6e6dc311ef581fe4abc95ca9c71b855385</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>

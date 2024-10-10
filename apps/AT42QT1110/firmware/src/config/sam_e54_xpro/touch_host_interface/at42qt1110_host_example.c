@@ -1,5 +1,5 @@
 /*******************************************************************************
-  MPLAB Harmony Touch Host Interface v1.0.0 Release
+  MPLAB Harmony Touch Host Interface v1.1.0 Release
 
   Company:
     Microchip Technology Inc.
@@ -33,7 +33,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-extern CommunicationStatus_t communicationStatus;
+int touch_mainloop_example(void);
 
 int touch_mainloop_example(void)
 {
@@ -43,15 +43,15 @@ int touch_mainloop_example(void)
   touchDeviceInit();
   touchTuneInit();
   // Read setup block
-  communicationStatus.readStatus = ReadSetupBlock(sizeof(setup_block), (uint8_t *)&setup_block);
+  communicationStatus.readStatus = ReadSetupBlock((uint8_t)sizeof(setup_block), (uint8_t *)&setup_block);
 
   /* TO DO : modify setup block parameters here
    * from default valus if required
    * For example: To set NTHR for Key 0 to 20
    * setup_block.KEY_0_NTHR = 20;
    */
-  communicationStatus.writeStatus = WriteSetupBlock(sizeof(setup_block), (uint8_t *)&setup_block);
-  while (1)
+  communicationStatus.writeStatus = WriteSetupBlock((uint8_t)sizeof(setup_block), (uint8_t *)&setup_block);
+  while (true)
   {
 
     touchDeviceProcess();
