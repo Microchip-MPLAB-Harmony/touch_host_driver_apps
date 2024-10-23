@@ -1,19 +1,3 @@
----
-parent: Touch Host Driver Applications
-title: AT42QT2120 Examples
-has_children: false
-has_toc: false
-nav_order: 1
----
+[![Microchip logo](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png)](https://www.microchip.com)
 
-![Microchip logo](../../images/microchip_logo.png)
-![Harmony logo small](../../images/microchip_mplab_harmony_logo_small.png)
-
-# AT42QT2120 Examples
-The following table provides links to documentation on how to build and run the touch example project on different development kits
-
-| Development Kit |
-| --- |
-| [SAMD21 Xplained Pro Development Board](firmware/docs/readme_sam_d21_xpro.md) |
-| [SAME54 Xplained Pro Development Board](firmware/docs/readme_sam_e54_xpro.md) |
-| [SAMC21 Xplained Pro Development Board](firmware/docs/readme_sam_c21_xpro.md) |
+[Click here](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=h3-touch-host-driver-example-at42qt2120&version=latest&redirect=true) to view documentation for this application.
