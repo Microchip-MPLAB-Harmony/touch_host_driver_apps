@@ -13,6 +13,9 @@ See [readme](readme.md) for detailed list of example applications
 - Applications for MTCH2120 are included
 - AT42QT1110 and AT42QT2120 applications are rebuilt with MISRA C compliant Touch Host Driver repository v1.1.0
 
+### Known Issues
+**The I2C/SPI bus used by Touch Host Driver applications cannot be used by other Harmony drivers.**
+
 ### BUGS FIXED
 
 - None
@@ -33,3 +36,5 @@ See [readme](readme.md) for detailed list of example applications
 - mcc v5.7.1
 - touch_host_driver v1.1.0
 - harmony-services v1.5.0
+
+
