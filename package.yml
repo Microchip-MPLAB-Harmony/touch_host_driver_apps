@@ -9,4 +9,4 @@ package:
   dependencies:
     - name: "touch_host_driver"
       type: "package"
-      version: "v1.0.1"
+      version: "v1.1.0"
