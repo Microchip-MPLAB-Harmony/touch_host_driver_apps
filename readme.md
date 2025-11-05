@@ -14,7 +14,7 @@ MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded
 This repository contains the MPLAB® Harmony 3 Touch Host Driver example applications. 
 
 - [Release Notes](./release_notes.md)
-- [MPLAB® Harmony License](Microchip_SLA001.md)
+- [License](License.md)
 
 To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/touch_host_driver_apps) and then click **Clone** button to clone this repository or download as zip file.
 This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
